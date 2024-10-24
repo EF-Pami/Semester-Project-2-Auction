@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="View this users profile on AuctionHub" />
+
+    <title></title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/dist/css/index.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    
+    <link rel="icon" href="data:;base64,=" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="module" src="../src/js/pages/profile.js" defer></script>
+    <script type="module" src="../src/js/index.js" defer></script>
+  </head>
+  <body class="min-vh-100 d-flex flex-column bg-white text-black">
+    <header class="sticky-top p-2 bg-white">
+      <nav class="navbar navbar-expand-md">
+        <div class="container-fluid">
+          <a href="/" class="navbar-brand">
+            <img
+              src="../assets/logo.png"
+              alt="Snapbid logotype"
+              class="logo"
+            />
+          </a>
+
+          <button
+            class="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse mb-3 mb-md-0"
+            id="navbarCollapse"
+          >
+            <div
+              class="navbar-nav align-items-center text-center fw-bold ms-auto p-2 mt-3 mt-md-0"
+            >
+              <a href="/" class="nav-link text-uppercase">home</a>
+              <a href="/Listings/" class="nav-link text-uppercase">listings</a>
+              <a
+                href="/CreateListing/index.html"
+                class="btn btn-sm btn-outline-dark rounded-1 text-uppercase mt-2 mt-md-0 ms-md-2 d-none"
+                id="add-listing-button"
+                >add listing</a
+              >
+
+              <div
+                class="d-flex flex-column align-items-center mt-2 d-none d-md-none"
+                id="nav-profile"
+              >
+                <a href="#" class="nav-link text-uppercase my-profile-link"
+                  >my profile</a
+                >
+                <button class="nav-link text-uppercase button-logout">
+                  log out
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="d-flex align-items-center justify-content-center gap-3 mt-3 mt-md-0 ms-auto"
+              id="not-logged-in"
+            >
+              <a
+                href="/auth/login.html"
+                class="btn btn-sm btn-outline-dark rounded-1 text-uppercase"
+              >
+                login
+              </a>
+
+              <a
+                href="/auth/register.html"
+                class="btn btn-sm btn-primary rounded-1 text-uppercase"
+              >
+                register
+              </a>
+            </div>
+
+            <div class="ms-auto d-flex gap-3 d-none" id="header-profile">
+              <div
+                class="d-none d-md-flex gap-1 align-items-center"
+                id="headerCredits"
+              >
+                <span id="creditsHeaderContainer">0</span>
+                <p class="m-0">credits</p>
+              </div>
+              <div
+                class="dropdown d-none d-md-block"
+                id="header-profile-button"
+              >
+                <button
+                  class="btn nav-link dropdown-toggle d-flex align-items-center"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  aria-label="profile menu"
+                >
+                  <i class="bi bi-person-circle"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a
+                      href="#"
+                      class="dropdown-item text-uppercase my-profile-link"
+                      >my profile</a
+                    >
+                  </li>
+                  <li>
+                    <button
+                      class="dropdown-item text-uppercase button-logout"
+                      type="button"
+                    >
+                      log out
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div
+        class="container d-flex flex-column py-2 py-sm-3 py-md-5"
+        id="profileContainer"
+      >
+        <div class="d-flex justify-content-center">
+          <div class="loader my-3"></div>
+        </div>
+      </div>
+
+      <div class="container py-2 my-sm-3 py-md-5">
+        <ul class="nav nav-tabs mb-3" id="listingsTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="listings-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#listingsTabContainer"
+              type="button"
+              role="tab"
+              aria-controls="listingsTabContainer"
+              aria-selected="true"
+            >
+              Listings
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="activeBids-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#activeBidsTabContainer"
+              type="button"
+              role="tab"
+              aria-controls="activeBidsTabContainer"
+              aria-selected="false"
+            >
+              Active bids
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="listingsTabContainer"
+            role="tabpanel"
+            aria-labelledby="listingsTabContainer"
+          >
+            <div
+              class="row row-gap-4 justify-content-start"
+              id="profileListingsContainer"
+            >
+              <div class="d-flex justify-content-center">
+                <div class="loader my-3"></div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="activeBidsTabContainer"
+            role="tabpanel"
+            aria-labelledby="list2-tab"
+          >
+            <div
+              class="row row-gap-4 justify-content-start"
+              id="profileActiveBidsContainer"
+            >
+              <div class="d-flex justify-content-center">
+                <div class="loader my-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal"
+        id="changeAvatarModal"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="changeAvatarModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content bg-light">
+            <div class="modal-header">
+              <h1 class="" id="changeAvatarModalLabel">Change avatar</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="modal-body">
+              <div class="container">
+                <form
+                  class="needs-validation mb-3"
+                  id="changeAvatarForm"
+                  novalidate
+                >
+                  <label for="changeAvatar" class="form-label mb-1"
+                    ><i class="bi bi-images"></i> Profile avatar URL
+                  </label>
+
+                  <input
+                    type="URL"
+                    class="form-control"
+                    id="changeAvatar"
+                    name="changeAvatar"
+                    placeholder="https://example.com/image.jpg"
+                    required
+                  />
+                  <div class="form-text" id="changeAvatarHelp">
+                    Avatar must be a valid URL
+                  </div>
+                  <div class="invalid-feedback alert alert-danger py-1">
+                    Please enter a valid url
+                  </div>
+                  <div class="d-flex justify-content-center gap-3 my-4">
+                    <button
+                      type="submit"
+                      class="btn btn-sm btn-primary rounded-1 text-uppercase px-4"
+                    >
+                      update avatar
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-dark rounded-1 text-uppercase border"
+                      data-bs-dismiss="modal"
+                    >
+                      cancel
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="toast-container position-fixed mt-2 top-0 end-0 p-3">
+        <div
+          class="toast bg-success"
+          id="avatarUpdateValidation"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header bg-success text-light">
+            <h5 class="my-0">Avatar update successful!</h5>
+            <button
+              class="btn-close btn-close-white ms-auto"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body text-light fs-6">
+            Your avatar has been updated.
+          </div>
+        </div>
+      </div>
+
+      <div class="toast-container position-fixed mt-2 top-0 end-0 p-3">
+        <div
+          class="toast bg-danger"
+          id="avatarUpdateValidationFailed"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header bg-danger text-light">
+            <h5 class="my-0">Avatar update failed!</h5>
+            <button
+              class="btn-close btn-close-white ms-auto"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body text-light fs-6">
+            Your avatar was not updated, please try again!
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+        <p>Copyright &copy; 2024 SNAPBID</p>
+    </footer>
+    
+  </body>
+</html>
