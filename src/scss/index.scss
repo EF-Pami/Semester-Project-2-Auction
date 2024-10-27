@@ -90,6 +90,25 @@ body {
   max-width: 400px;
 }
 
+.dropdown-item {
+    text-transform: uppercase;
+
+    &:hover {
+        color:$brown;
+        transition: 0.3s ease;
+    }
+}
+
+
+.btn-primary {
+    background-color: $coral;
+    color: $white;
+
+    &:hover{
+        background-color: $black;
+        color: $white;
+    }
+}
 // Footer
 
 footer {

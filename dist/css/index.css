@@ -2119,7 +2119,7 @@ progress {
   appearance: none;
   background-color: #f1edea;
   background-clip: padding-box;
-  border: 2px solid #994318;
+  border: 2px solid #005467;
   border-radius: 0.3125rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -2272,7 +2272,7 @@ textarea.form-control-lg {
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 16px 12px;
-  border: 2px solid #994318;
+  border: 2px solid #005467;
   border-radius: 0.3125rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -2658,7 +2658,7 @@ textarea.form-control-lg {
   text-align: center;
   white-space: nowrap;
   background-color: #f1edea;
-  border: 2px solid #994318;
+  border: 2px solid #005467;
   border-radius: 0.3125rem;
 }
 
@@ -11937,6 +11937,23 @@ body {
 
 #listingDescription {
   max-width: 400px;
+}
+
+.dropdown-item {
+  text-transform: uppercase;
+}
+.dropdown-item:hover {
+  color: #994318;
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #005467;
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: #1c1c1c;
+  color: #ffffff;
 }
 
 footer {
