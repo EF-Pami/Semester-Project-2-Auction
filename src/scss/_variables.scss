@@ -2,13 +2,13 @@
 $white: #ffffff;
 $isabelline: #fbf8f4;
 $black: #1c1c1c;
-$coral: #ea804f;
+$coral: #005467;
 $brown: #994318;
 $background: beige;
 
 // Theme-color-variables
 $primary: $coral;
-$secondary: $brown;
+$secondary: $coral;
 $light: $isabelline;
 
 // Font Family
@@ -19,7 +19,7 @@ $font-family-base: "Lato", sans-serif;
 $card-height: 100%;
 
 // Navigation
-$navbar-light-color: $black;
+$navbar-light-color: $white;
 $navbar-light-hover-color: rgba(($black), 0.5);
 $navbar-light-active-color: $brown;
 
@@ -35,7 +35,7 @@ $link-decoration: none;
 $link-hover-decoration: underline;
 
 // Nav tabs
-$nav-link-color: $black;
+$nav-link-color: $white;
 $nav-link-hover-color: rgba(($black), 0.5);
 $nav-tabs-link-active-color: $secondary;
 $nav-tabs-border-color: $secondary;
