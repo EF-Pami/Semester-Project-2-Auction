@@ -2119,7 +2119,7 @@ progress {
   appearance: none;
   background-color: #f1edea;
   background-clip: padding-box;
-  border: 2px solid #005467;
+  border: 2px solid var(--bs-border-color);
   border-radius: 0.3125rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -2272,7 +2272,7 @@ textarea.form-control-lg {
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 16px 12px;
-  border: 2px solid #005467;
+  border: 2px solid var(--bs-border-color);
   border-radius: 0.3125rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -2658,7 +2658,7 @@ textarea.form-control-lg {
   text-align: center;
   white-space: nowrap;
   background-color: #f1edea;
-  border: 2px solid #005467;
+  border: 2px solid var(--bs-border-color);
   border-radius: 0.3125rem;
 }
 
@@ -11879,7 +11879,7 @@ body {
 }
 
 #add-listing-button {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 #header-profile-button i {
@@ -11959,6 +11959,17 @@ body {
   background-color: #1c1c1c;
   color: #ffffff;
   transition: background-color 0.3s ease;
+}
+
+input,
+textarea,
+.form-control {
+  border: 2px solid #005467 !important;
+}
+
+.input-group .form-control,
+.input-group .input-group-text {
+  border: 2px solid #005467 !important;
 }
 
 footer {

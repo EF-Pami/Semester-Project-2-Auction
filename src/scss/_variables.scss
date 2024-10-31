@@ -6,6 +6,8 @@ $black: #1c1c1c;
 $coral: #005467;
 $brown: #994318;
 $background: beige;
+$custom-border-color: #005467;
+$custom-border-width: 2px;
 
 // Theme-color-variables
 $primary: $coral;
@@ -46,7 +48,7 @@ $nav-tabs-link-active-border-color: $secondary;
 $input-bg: #f1edea;
 $input-color: $black;
 $input-border-width: 2px;
-$input-border-color: $coral;
+//$input-border-color: $coral;
 $input-border-radius: 0.3125rem;
 
 $input-focus-bg: $white;

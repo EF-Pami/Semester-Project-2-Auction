@@ -30,7 +30,7 @@ body {
 }
 
 #add-listing-button {
-    color: $white;
+    color: $white !important;
 }
 
 #header-profile-button i {
@@ -119,6 +119,20 @@ body {
         }
     }
 }
+
+input,
+textarea,
+.form-control {
+    border: $custom-border-width solid $custom-border-color !important;
+    
+    
+}
+
+.input-group .form-control,
+.input-group .input-group-text {
+    border: $custom-border-width solid $custom-border-color !important;
+}
+
 // Footer
 
 footer {
