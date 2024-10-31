@@ -11874,6 +11874,10 @@ body {
   background-color: #005467;
 }
 
+.nav-link {
+  color: #ffffff !important;
+}
+
 #add-listing-button {
   color: #ffffff;
 }

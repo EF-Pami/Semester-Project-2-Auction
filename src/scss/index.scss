@@ -25,7 +25,9 @@ body {
     background-color: $primary;
 }
 
-
+.nav-link {
+    color: $white !important;
+}
 
 #add-listing-button {
     color: $white;

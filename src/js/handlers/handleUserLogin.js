@@ -10,7 +10,7 @@ import { showToast } from "../components/showToast.js";
  * @example
  * ```js
  * const userDetails = {
- *  email: "john@stud.noroff.no",
+ *  email: "peter@stud.noroff.no",
  *  password: "password",
  * };
  *

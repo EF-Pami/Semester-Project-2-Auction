@@ -10,8 +10,8 @@ import { handleUserLogin } from "./handleUserLogin.js";
  * @example
  * ```js
  * const userDetails = {
- *  name: "JohnDoe",
- *  email: "john@stud.noroff.no",
+ *  name: "Peter",
+ *  email: "peter@stud.noroff.no",
  *  password: "password",
  *  avatar: "https://www.example.com/image.jpg"
  * };
